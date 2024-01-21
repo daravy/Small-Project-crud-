@@ -18,5 +18,14 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    return "Student Management System";
+    return view('layouts.master');
+});
+Route::prefix('/subject')->group(function(){
+    Route::get('/', function () {
+        return view('layouts.subject.subject-list');
+    });
+}); 
+
+Route::get('/student', function () {
+    return view('layouts.student.student-list');
 });
